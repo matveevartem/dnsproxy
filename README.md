@@ -40,9 +40,11 @@ test4.ru = not resolved # если указан домен test4.ru вернет
 <h4>Как тестировать:</h4>
 
 команда
+
 <strong>$ dig -p 53 @127.0.0.1 test1.ru</strong>
+
+<strong>$ nslookup www.test2.ru 127.0.0.1</strong>
 
 или прописать в resolv.conf nameserver 127.0.0.1 
 
-<strong>$ nslookup www.test2.ru</strong>
 <strong>$ resolveip test3.ru</strong>
