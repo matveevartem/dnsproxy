@@ -91,9 +91,9 @@ class DNSProxy:
     def handler(self, data, addr, sock):
         request = dpkt.dns.DNS(data)
         host_name = request.qd[0].name
-        host_name = self.searchInBlackList(host_name)
+        rule = self.searchInBlackList(host_name)
         
-        if host_name is not None:
+        if rule is not None:
             response = self.buildResponse(data)
         else:
             response = self.sendRequest(request)
