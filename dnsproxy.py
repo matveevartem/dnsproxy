@@ -63,7 +63,10 @@ class DNSProxy:
 
         if is_ip:
             response = DNSRecord(DNSHeader(id=dns.header.id, bitmap=dns.header.bitmap, qr=1, aa=1, ra=1, rcode=0), q=dns.q)
-            response.add_answer(RR(qname, getattr(QTYPE,qtype), rdata=RDMAP[qtype](str(rule))))
+            try:
+                response.add_answer(RR(qname, getattr(QTYPE,qtype), rdata=RDMAP[qtype](str(rule))))
+            except Exception as e:
+                None
         else:
             response = DNSRecord(DNSHeader(id=dns.header.id, bitmap=dns.header.bitmap, qr=1, aa=1, ra=1, rcode=3), q=dns.q)
             response.add_auth(RR("dnsproxy",QTYPE.SOA,ttl=60,rdata=SOA("ns.dnsproxy","admin.dnsproxy",(20140101,10800,3600,604800,38400))))
