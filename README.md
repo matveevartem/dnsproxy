@@ -3,21 +3,23 @@ Simple DNS Proxy Server with Black List
 
 Исходный файл: dnsproxy.py
 
-Установка
+<h4>Установка:</h4>
 
 chmod +x dnsproxy.py
 
-Запуск:
+<h4>Запуск:</h4>
 
 sudo ./dnsproxy.py [options]
+
 sudo python3 dnsproxy.py [options]
 
-Справка:
+<h4>Справка:</h4>
 
 ./dnsproxy.py -h
+
 python3 dnsproxy.py -h
 
-Формат файла конфигурации
+<h4>Формат файла конфигурации</h4>
 
 [DNS Server]
 
@@ -33,12 +35,12 @@ test3.ru = not resolved # если указан домен test3 вернет д
 
 
 
-Как тестировать:
+<h4>Как тестировать:</h4>
 
 команда
-$ dig -p 53 @127.0.0.1 test1.ru
+<strong>$ dig -p 53 @127.0.0.1 test1.ru</strong>
 
 или прописать в resolv.conf nameserver 127.0.0.1 
 
-$ nslookup www.test2.ru
-$ resolveip test3.ru
+<strong>$ nslookup www.test2.ru</strong>
+<strong>$ resolveip test3.ru</strong>
