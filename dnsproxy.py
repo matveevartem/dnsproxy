@@ -172,7 +172,7 @@ if __name__ == '__main__':
     
     parser = OptionParser(usage = "dnsproxy.py [options]", description="Приложение требует права root для запуска на привилегированных портах." )
     parser.add_option("-p","--port", dest="port", metavar="", default=53, help="Номер порта для приема DNS запросов. 53 по умолчанию")
-    parser.add_option("-c","--config", dest="config", metavar="", default="settings.conf", help="Пусть к файлу настроек (settings.ini по умолчанию)")
+    parser.add_option("-c","--config", dest="config", metavar="", default="settings.conf", help="Пусть к файлу настроек (settings.conf по умолчанию)")
     (options,args) = parser.parse_args()
     
     if not options.config:
